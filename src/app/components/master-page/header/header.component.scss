@@ -38,6 +38,7 @@ nav{
 .navbar-right ul li a{
   text-decoration: none;
   color: $purpu;
+  font-size: 14px;
   border: 1px solid $backgroud-degradado-right;
   padding: 8px;
   border-radius: 8px;
@@ -45,7 +46,7 @@ nav{
 
 .navbar-left ul li a{
   margin: 0 4px 0 4px;
-  font-weight: bold;
+  font-weight: 600;
 }
 
 .navbar-left ul li a:hover,
