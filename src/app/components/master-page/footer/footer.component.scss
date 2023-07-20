@@ -1,0 +1,18 @@
+@import '../../../../styles.scss';
+
+
+.footer {
+  background: $backgroud-degradado-left;
+  text-align: center;
+  box-shadow: $box-shadow-sombreado;
+  bottom: 0;
+  position: fixed;
+  width: 100%;
+}
+
+.footer-text {
+  color: $purpu;
+  font-weight: bold;
+  font-size: $md;
+  margin: 10px;
+}
