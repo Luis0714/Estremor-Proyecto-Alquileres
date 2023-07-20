@@ -1,0 +1,33 @@
+<div class="menu-mobile">
+    <div class="info-user">
+      <img class="image-user" src="../../../../../assets/images/user/user-default.png" alt="">
+      <h3 class="name-user">Luis Andres Martinez Estremor</h3>
+      <p class="rol-user">Super Administrador</p>
+    </div>
+    <ul>
+      <li>
+        <fa-icon class="icon-menu-modile" [icon]="faUsers "></fa-icon>
+        <a href="">Usuarios</a>
+      </li>
+      <li>
+        <fa-icon class="icon-menu-modile" [icon]="faUserSecret "></fa-icon>
+        <a href="">Roles</a>
+      </li>
+      <li>
+        <fa-icon class="icon-menu-modile" [icon]="faPhone "></fa-icon>
+        <a href="">Contactenos</a>
+      </li>
+
+    </ul>
+
+
+    <ul>
+      <li>
+        <fa-icon class="icon-menu-modile" [icon]="faEnvelope" size="sm" color="#9ae07d" ></fa-icon>
+        <a href="" class="email">{{user?.email}}</a></li>
+      <li>
+        <fa-icon class="icon-menu-modile" [icon]="faRightFromBracket" size="sm" color="#9ae07d" ></fa-icon>
+        <a routerLink="/login" class="sing-out">Sing out</a>
+      </li>
+    </ul>
+  </div>

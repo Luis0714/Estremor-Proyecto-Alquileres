@@ -1,0 +1,51 @@
+@import '../../../../../styles.scss';
+
+
+.desktop-menu{
+  position: absolute;
+  background: $backgroud-degradado-botton;
+  top: 15px;
+  right: -79px;
+  width: 120px;
+  height: auto;
+  border: 1px solid $Very-light-pink;
+  border-radius: 6px;
+  padding: 20px 20px 0px 20px;
+}
+.desktop-menu ul{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.desktop-menu ul li{
+  display: flex;
+  flex-direction: column;
+  text-align: end;
+}
+
+.desktop-menu ul li a:last-child{
+  padding-top: 20px;
+  border-top: 1px solid $Very-light-pink;
+}
+.desktop-menu ul li a:last-child:hover{
+ color: $white;
+}
+
+.desktop-menu ul li a:not(:last-child){
+  font-weight: bold;
+}
+.desktop-menu ul li a:hover{
+  color: $text-input-field;
+}
+
+.desktop-menu ul li a:last-child{
+  color: $Very-light-pink;
+  font-size: $sm;
+}
+.desktop-menu ul li a{
+  color: $purpu;
+  font-size: $sm;
+  display: inline-block;
+  text-decoration: none;
+  margin-bottom: 18px;
+}
