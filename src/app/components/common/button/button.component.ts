@@ -10,7 +10,7 @@ export class ButtonComponent {
  @Input() variant:''|'outline-' = '';
  @Input() size:'sm'|'lg' = 'sm';
  @Input() background:string = 'blue';
- @Input() textColor:string = 'green';
+ @Input() textColor:string = '';
  @Input() backgroundHover:string = 'white';
  @Input() textColorHover:string = 'FFFFFF';
  botonEstilos: { [klass: string]: any } =

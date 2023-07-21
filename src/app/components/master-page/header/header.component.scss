@@ -13,6 +13,8 @@ nav{
   box-shadow: $box-shadow-sombreado;
   position: fixed;
   z-index: 999;
+  top: 0;
+  height: 100px;
 }
 
 .menu{

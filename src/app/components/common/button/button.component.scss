@@ -1,0 +1,16 @@
+@import '../../../../styles.scss';
+.boton{
+    width: 100%;
+    border: 1px solid $repurpu;
+    border-radius: 6px;
+    background: $repurpu;
+    color: $white;
+    font-weight: 400;
+    font-size: $lg;
+}
+
+.boton:hover{
+    background:$white;
+    color:$repurpu;
+    box-shadow: 2px $text-input-field;
+}
