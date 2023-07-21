@@ -7,6 +7,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { LayoutComponent } from './components/layout/layout.component';
 import { MenuDesktopComponent } from './components/menu-desktop/menu-desktop.component';
 import { MenuMobileComponent } from './components/menu-mobile/menu-mobile.component';
+import {OverlayModule} from '@angular/cdk/overlay';
 
 
 @NgModule({
@@ -22,6 +23,7 @@ import { MenuMobileComponent } from './components/menu-mobile/menu-mobile.compon
     CommonModule,
     WebsiteRoutingModule,
     FontAwesomeModule,
+    OverlayModule,
   ]
 })
 export class WebsiteModule { }
