@@ -11,15 +11,18 @@
         <div class="form-container bg-white rounded shadow">
           <div class="form mb-4">
             <h1 class=" title text-center font-semibold pt-4 pb-8">Log In to Estremor</h1>
-            <form [formGroup]="form" class="space-y-4 needs-validation">
+            <form [formGroup]="form" class="space-y-4 needs-validation" novalidateatributo>
               <div class="relative">
-                <input placeholder="Enter email" type="text" class="form-control w-full rounded bg-gray-100 border-2" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
+                <input placeholder="Enter email" formControlName="email" type="text" class="form-control w-full rounded bg-gray-100 border-2" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
                 <div class="invalid-feedback">
                   Please choose a username.
                 </div>
-                <input placeholder="Enter Password" type="password" class="form-control w-full rounded bg-gray-100 border-2" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
+                <input placeholder="Enter Password" formControlName="password" type="password" class="form-control w-full rounded bg-gray-100 border-2" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
               </div>
-                <app-button class="boton" [variant]="'outline-'" [type]="'submit'">Log in</app-button>
+                <app-button disabled="form.invalid" (click)="login()" class="boton" [variant]="'outline-'" [type]="'submit'">Log in</app-button>
+             
+                  <!-- <button class="btn btn-primary" type="submit">Submit form</button> -->
+               
             </form>
           </div>
         </div>

@@ -8,6 +8,7 @@ import { BehaviorSubject, Observable, switchMap, tap } from 'rxjs';
 import { User } from '../models/user.model';
 import { Router } from '@angular/router';
 import { StoreService } from './store.service';
+import { checkToken } from '../interceptors/token.interceptor';
 
 @Injectable({
   providedIn: 'root'
@@ -26,12 +27,13 @@ export class AuthService {
     return this.Http.post<Response<string>>(`${this.apiUrl}/authenticate`,credentials)
           .pipe(
             tap(response => {
-              this.tokenservice.saveToken(response.data)
+              this.tokenservice.saveToken(response.data);
+              this.getProfile().subscribe();
             })
           );
   }
   getProfile():Observable<Response<Partial<User>>>{
-    return this.Http.get<Response<Partial<User>>>(`${this.apiUrl}/profile`,{})
+    return this.Http.get<Response<Partial<User>>>(`${this.apiUrl}/profile`,{ context: checkToken() })
     .pipe(
       tap(response =>this.storeService.user.next(response.data))
     );

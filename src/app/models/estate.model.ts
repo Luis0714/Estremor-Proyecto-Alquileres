@@ -1,0 +1,1 @@
+export type Estate = 'init' | 'loading' | 'success'| 'failed' ;

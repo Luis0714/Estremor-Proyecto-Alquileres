@@ -38,7 +38,7 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit(): void {
-   
+    this.getUserLogged();
   }
 
   toggleMenu(){

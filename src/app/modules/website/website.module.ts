@@ -8,6 +8,8 @@ import { LayoutComponent } from './components/layout/layout.component';
 import { MenuDesktopComponent } from '../shared/components/menu-desktop/menu-desktop.component';
 import { MenuMobileComponent } from '../shared/components/menu-mobile/menu-mobile.component';
 import {OverlayModule} from '@angular/cdk/overlay';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { TokenInterceptor } from 'src/app/interceptors/token.interceptor';
 
 
 @NgModule({
@@ -24,6 +26,10 @@ import {OverlayModule} from '@angular/cdk/overlay';
     WebsiteRoutingModule,
     FontAwesomeModule,
     OverlayModule,
-  ]
+  ],
+  providers:
+  [ 
+    { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true }
+  ],
 })
 export class WebsiteModule { }
