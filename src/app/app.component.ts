@@ -20,7 +20,7 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(){
-
+    this.userLogged();
   }
   userLogged(){
     const token = this.tokenService.getToken();
