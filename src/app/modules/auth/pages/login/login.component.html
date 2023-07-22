@@ -1,1 +1,29 @@
-<p>login works!</p>
+<body>
+    <div class="container-login bg-gray-90 position-relative">
+      <div class="container-images position-absolute">
+        <img class="img-left" src="../../../assets/images/backgroud/house-hubication (1).svg" alt="bg left">
+        <img class="img-rigth" src="../../../assets/images/backgroud/woman-house.svg" alt="bg rigth">
+      </div>
+      <div class="continer-form m-auto">
+        <header class="pt-6 pb-2 d-flex justify-content-center">
+          <img  src="../../../assets/images/logos/logo1.png" alt="logo">
+        </header>
+        <div class="form-container bg-white rounded shadow">
+          <div class="form mb-4">
+            <h1 class=" title text-center font-semibold pt-4 pb-8">Log In to Estremor</h1>
+            <form [formGroup]="form" class="space-y-4 needs-validation">
+              <div class="relative">
+                <input placeholder="Enter email" type="text" class="form-control w-full rounded bg-gray-100 border-2" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
+                <div class="invalid-feedback">
+                  Please choose a username.
+                </div>
+                <input placeholder="Enter Password" type="password" class="form-control w-full rounded bg-gray-100 border-2" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
+              </div>
+                <app-button class="boton" [variant]="'outline-'" [type]="'submit'">Log in</app-button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+

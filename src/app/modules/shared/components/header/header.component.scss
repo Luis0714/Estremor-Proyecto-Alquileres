@@ -109,45 +109,6 @@ nav{
   height: 24px;
   object-fit: cover;
 }
-
-.container-menu-mobile{
- display: inline-block;
- height: auto;
- padding: 10px;
- width: auto;
- position: absolute;
- top: 101px;
- left: 1;
- border: 1px solid red;
- border-radius: 10px;
-}
-
-.menu-mobile {
-  padding: 24px;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  background: $maron-claro;
-  display: flex;
-  flex-direction: column;
-  justify-content:flex-start;
-  transform: translateX(-100);
-  transition: all ease-out .5s;
-}
-.menu-mobile.active{
-  display: none;
-  transform: translateX(0);
-}
-
-.icon-menu-modile fa-icon{
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 50px;
-  height: 50px;
-  cursor: pointer;
-}
 .image-user{
   width: 120px;
   height: 120px;
@@ -182,51 +143,12 @@ nav{
  margin-bottom: 12px;
  width: 100%;
 }
-
-
-.menu-mobile a {
-  text-decoration: none;
-  color: black;
-  font-weight: bold;
-  margin-bottom: 24px;
-}
-.icon-menu-modile{
-  margin: 30px;
-}
-
-.menu-mobile a:hover {
-  text-decoration: none;
-  color: $holpital-green;
-  border-radius: 1px solid $holpital-green;
-  cursor: pointer;
-  font-weight: bold;
-  margin-bottom: 24px;
-}
-
-.menu-mobile ul {
-  padding: 0;
-  list-style: none;
-  margin-top: 24px 0 0;
-}
-
-.menu-mobile ul li{
-  margin-bottom: 24px;
-}
 .email{
   font-size: $sm;
   font-weight: 300 !important;
   color: $Very-light-pink;
 }
 
-.menu-mobile ul:nth-child(2){
-  border-bottom: 1px solid $Very-light-pink;
-}
-.menu-mobile ul:nth-child(3){
-  border-bottom: 1px solid $Very-light-pink;
-}
-.menu-mobile ul:nth-child(1){
-  border-bottom: 1px solid $Very-light-pink;
-}
 .sing-out{
   font-size: $sm;
   color: $holpital-green !important;

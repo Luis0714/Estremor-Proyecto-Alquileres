@@ -1,3 +1,4 @@
 export const  Environment = {
-FileUrl: ''
+FileUrl: '',
+AccountUrl:''
 }

@@ -5,6 +5,8 @@ import { faRightFromBracket,faUsers,faPhone, faUserSecret} from '@fortawesome/fr
 import { Dialog } from '@angular/cdk/dialog';
 import { User } from 'src/app/models/user.model';
 import { Environment } from 'src/environments/environment';
+import { AuthService } from 'src/app/services/auth.service';
+import { StoreService } from 'src/app/services/store.service';
 
 
 @Component({
@@ -14,7 +16,7 @@ import { Environment } from 'src/environments/environment';
 })
 
 export class HeaderComponent implements OnInit {
-  user : User | null = null;
+  user : Partial<User> | null = null;
   faAngleDown = faAngleDown;
   faAngleUp = faAngleUp;
   faBars = faBars;
@@ -29,15 +31,14 @@ export class HeaderComponent implements OnInit {
   openSesion = false;
 
   constructor(
-  //  private autorizationService : AutorizationService,
+   private storeService : StoreService,
    private router : Router,
   ){
 
   }
 
   ngOnInit(): void {
-    //this.getUserLogged()
-   // this.autorizationService.getProfile().subscribe();
+   
   }
 
   toggleMenu(){
@@ -54,11 +55,10 @@ export class HeaderComponent implements OnInit {
     this.router.navigateByUrl(route);
   }
 
-  // getUserLogged(){
-  //   this.autorizationService.user$
-  //   .subscribe(user => {
-  //     this.user = user;
-  //     console.log('El user', this.user)
-  //   });
-  // }
+  getUserLogged(){
+    this.storeService.user$.subscribe(user =>{
+      this.user = user;
+      console.log('El user', this.user);
+    });
+  }
 }
