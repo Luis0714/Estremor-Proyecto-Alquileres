@@ -6,13 +6,16 @@ import { UsersComponent } from './pages/users/users.component';
 import { GridComponent } from './pages/grid/grid.component';
 import { LayoutComponent } from './components/layout/layout.component';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { RolsComponent } from './pages/rols/rols.component'
 import { TokenInterceptor } from 'src/app/interceptors/token.interceptor';
+
 
 
 @NgModule({
   declarations: [
     UsersComponent,
     GridComponent,
+    RolsComponent,
     LayoutComponent
   ],
   imports: [
