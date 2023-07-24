@@ -10,6 +10,8 @@ import { MenuMobileComponent } from '../shared/components/menu-mobile/menu-mobil
 import {OverlayModule} from '@angular/cdk/overlay';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TokenInterceptor } from 'src/app/interceptors/token.interceptor';
+import { UserRegisterComponent } from './pages/user-register/user-register.component';
+import { HomeComponent } from './pages/home/home.component';
 
 
 @NgModule({
@@ -20,6 +22,8 @@ import { TokenInterceptor } from 'src/app/interceptors/token.interceptor';
     LayoutComponent,
     MenuDesktopComponent,
     MenuMobileComponent,
+    UserRegisterComponent,
+    HomeComponent,
   ],
   imports: [
     CommonModule,

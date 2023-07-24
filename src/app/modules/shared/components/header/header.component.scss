@@ -168,6 +168,13 @@ nav{
 .container-menu{
   display: none;
 }
+.offcanvas-body{
+  background: rgb(158, 137, 210);
+}
+.offcanvas-header{
+  font-weight: bold;
+  color: mediumpurple;
+}
 
 @media (max-width: 660px){
   .menu{

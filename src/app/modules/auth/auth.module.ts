@@ -9,6 +9,7 @@ import { ButtonComponent } from '../shared/components/button/button.component';
 import { ResetPasswordComponent } from './pages/reset-password/reset-password.component';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TokenInterceptor } from 'src/app/interceptors/token.interceptor';
+import { WebsiteModule } from '../website/website.module';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { TokenInterceptor } from 'src/app/interceptors/token.interceptor';
     CommonModule,
     AuthRoutingModule,
     ReactiveFormsModule,
-    SharedModule
+    SharedModule,
+    WebsiteModule
   ],
   providers:
   [ 

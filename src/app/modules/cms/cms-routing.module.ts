@@ -27,6 +27,11 @@ const routes: Routes = [
       {
         path: 'rols',
         component: RolsComponent
+      },
+      {
+        path: 'website',
+        redirectTo: '/website',
+        pathMatch: 'full'
       }
     ]
   }

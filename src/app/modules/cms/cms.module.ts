@@ -8,6 +8,7 @@ import { LayoutComponent } from './components/layout/layout.component';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RolsComponent } from './pages/rols/rols.component'
 import { TokenInterceptor } from 'src/app/interceptors/token.interceptor';
+import { WebsiteModule } from '../website/website.module';
 
 
 
@@ -20,7 +21,8 @@ import { TokenInterceptor } from 'src/app/interceptors/token.interceptor';
   ],
   imports: [
     CommonModule,
-    CmsRoutingModule
+    CmsRoutingModule,
+    WebsiteModule,
   ],
   providers:
   [ 

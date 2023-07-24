@@ -47,7 +47,7 @@
 }
 .form{
     background: $white;
-    padding: 18px 46px 18px 46px;
+    padding: 18px 46px 62px 46px;
 }
 input{
     margin-bottom: 16px;
@@ -57,4 +57,30 @@ input{
     display: flex;
     align-items: center;
     justify-content: center;
+}
+.links {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.links a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.links a:hover {
+    text-decoration: underline;
+}
+.error-message {
+    color: #ff0000;
+    text-align: center;
+    margin-top: 10px;
+}
+
+@media (max-width: 660px){
+    .continer-form{
+        position: relative;
+        width: 80%;
+    }
 }

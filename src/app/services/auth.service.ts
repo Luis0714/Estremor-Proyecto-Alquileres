@@ -15,7 +15,8 @@ import { checkToken } from '../interceptors/token.interceptor';
 })
 export class AuthService {
 
-  private apiUrl = `${Environment.AccountUrl}`;
+  private server = `${Environment.server}/account`;
+
  
   constructor(
     private Http:HttpClient,
@@ -24,7 +25,7 @@ export class AuthService {
     private storeService: StoreService
   ) { }
   login(credentials:Credentials):Observable<Response<string>>{
-    return this.Http.post<Response<string>>(`${this.apiUrl}/authenticate`,credentials)
+    return this.Http.post<Response<string>>(`${this.server}/authenticate`,credentials)
           .pipe(
             tap(response => {
               this.tokenservice.saveToken(response.data);
@@ -33,7 +34,7 @@ export class AuthService {
           );
   }
   getProfile():Observable<Response<Partial<User>>>{
-    return this.Http.get<Response<Partial<User>>>(`${this.apiUrl}/profile`,{ context: checkToken() })
+    return this.Http.get<Response<Partial<User>>>(`${this.server}/profile`,{ context: checkToken() })
     .pipe(
       tap(response =>this.storeService.user.next(response.data))
     );

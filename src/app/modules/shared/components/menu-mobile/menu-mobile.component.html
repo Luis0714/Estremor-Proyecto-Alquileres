@@ -1,26 +1,24 @@
 <div class="menu-mobile">
     <div class="info-user">
       <img class="image-user" src="../../../../../assets/images/user/user-default.png" alt="">
-      <h3 class="name-user">Luis Andres Martinez Estremor</h3>
-      <p class="rol-user">Super Administrador</p>
+      <h3 class="name-user">{{user?.name}} {{user?.lastName}} {{user?.secondLastName}}</h3>
+      <p class="rol-user">{{user?.rol?.nombre}}</p>
     </div>
     <ul>
       <li>
         <fa-icon class="icon-menu-modile" [icon]="faUsers "></fa-icon>
-        <a href="">Usuarios</a>
+        <a routerLink="/home">Inicio</a>
       </li>
       <li>
         <fa-icon class="icon-menu-modile" [icon]="faUserSecret "></fa-icon>
-        <a href="">Roles</a>
+        <a routerLink="/cms">Administración</a>
       </li>
       <li>
         <fa-icon class="icon-menu-modile" [icon]="faPhone "></fa-icon>
         <a href="">Contactenos</a>
       </li>
-
+      <li>
     </ul>
-
-
     <ul>
       <li>
         <fa-icon class="icon-menu-modile" [icon]="faEnvelope" size="sm" color="#9ae07d" ></fa-icon>

@@ -1,12 +1,17 @@
 .contanier-general{
-    border: 2px solid rebeccapurple;
     margin-top: 100px;
     min-height: 470px;
-    margin-bottom: 79px;
+    margin-bottom: 90px;
     overflow: auto;
    }
 
 .footer{
     bottom: 0;
     height: 100px;
+}
+
+@media (max-width: 660px){
+    .contanier-general{
+        margin-bottom: 128px;
+    }
 }

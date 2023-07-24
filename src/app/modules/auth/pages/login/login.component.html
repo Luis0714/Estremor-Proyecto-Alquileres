@@ -24,6 +24,13 @@
                   <!-- <button class="btn btn-primary" type="submit">Submit form</button> -->
                
             </form>
+            <div class="error-message" *ngIf="state === 'failed'">
+              El usuario o la contraseña son incorrectos.
+            </div>
+            <div class="links">
+              <a href="/reset-password">Reset Password</a>
+              <a href="/register">Register</a>
+          </div>
           </div>
         </div>
       </div>

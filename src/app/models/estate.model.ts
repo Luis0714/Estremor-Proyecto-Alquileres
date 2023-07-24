@@ -1,1 +1,1 @@
-export type Estate = 'init' | 'loading' | 'success'| 'failed' ;
+export type State = 'init' | 'loading' | 'success'| 'failed' ;

@@ -21,10 +21,7 @@
           <a routerLink="/home">Inicio</a>
         </li>
         <li>
-          <a routerLink="/cms">Cms</a>
-        </li>
-        <li>
-          <a routerLink="/rols">Roles</a>
+          <a routerLink="/cms">Administración</a>
         </li>
         <li>
           <a routerLink="/contactenos">Cantactenos</a>
@@ -38,8 +35,9 @@
           <fa-icon class="icono" [icon]="openSesion ? faAngleUp : faAngleDown"></fa-icon>
         </li>
         <li class="navbar-image-user">
-          <img *ngIf="!user" src="../../../../assets/images/user/user-default.png" alt="imagen usuario">
-          <img *ngIf="user" src="{{urlServer}}?ruta={{user.image}}" alt="imagen usuario">
+          <img src="../../../../assets/images/user/user-default.png" alt="imagen usuario">
+          <!-- <img *ngIf="!user" src="../../../../assets/images/user/user-default.png" alt="imagen usuario"> -->
+          <!-- <img *ngIf="user" src="{{urlServer}}?ruta={{user.image}}" alt="imagen usuario"> -->
         </li>
       </ul>
     </div>
