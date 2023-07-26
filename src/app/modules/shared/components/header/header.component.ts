@@ -26,7 +26,7 @@ export class HeaderComponent implements OnInit {
   faPhone = faPhone;
   faUserSecret = faUserSecret;
   isMenuOpen: boolean = false;
- 
+  azureStorageBaseUrl = Environment.azureStorageBaseUrl;
   defaultImage = ''
   openSesion = false;
 

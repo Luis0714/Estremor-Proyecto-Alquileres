@@ -35,9 +35,7 @@
           <fa-icon class="icono" [icon]="openSesion ? faAngleUp : faAngleDown"></fa-icon>
         </li>
         <li class="navbar-image-user">
-          <img src="../../../../assets/images/user/user-default.png" alt="imagen usuario">
-          <!-- <img *ngIf="!user" src="../../../../assets/images/user/user-default.png" alt="imagen usuario"> -->
-          <!-- <img *ngIf="user" src="{{urlServer}}?ruta={{user.image}}" alt="imagen usuario"> -->
+          <img *ngIf="user" src="{{azureStorageBaseUrl}}/estremoruserscontainer/{{user.image}}" alt="imagen usuario">
         </li>
       </ul>
     </div>

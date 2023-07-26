@@ -8,6 +8,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { NotFoundComponent } from './modules/shared/components/not-found/not-found.component';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { TokenInterceptor } from './interceptors/token.interceptor';
+import { ConfirmationService, MessageService } from 'primeng/api';
 
 
 @NgModule({
@@ -21,10 +22,11 @@ import { TokenInterceptor } from './interceptors/token.interceptor';
     AppRoutingModule,
     FontAwesomeModule,
     OverlayModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers:
   [ 
+    ConfirmationService, MessageService,
     { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true }
   ],
   bootstrap: [AppComponent]
