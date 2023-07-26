@@ -1,7 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { NgxSpinnerService } from 'ngx-spinner';
-import { ConfirmationService, MessageService } from 'primeng/api';
 import { FileUpload } from 'primeng/fileupload';
 import { User } from 'src/app/models/user.model';
 import { FileService } from 'src/app/services/file.service';
@@ -34,8 +32,6 @@ export class UsersComponent implements OnInit{
   (
     private userService: UserService, 
     private formBuilder: FormBuilder, 
-    private spinner: NgxSpinnerService,
-    private confirmationService: ConfirmationService, private messageService: MessageService,
     private fileService: FileService
     ) { }
 
@@ -91,7 +87,6 @@ export class UsersComponent implements OnInit{
   }
 
   onSubmit() {
-    this.spinner.show();
     let data: Partial<User> = {
       ...this.formGroup?.value
     };
@@ -121,14 +116,11 @@ export class UsersComponent implements OnInit{
     // } else {
       this.userService.createUser(data).subscribe({
         next: response => {
-          this.spinner.hide();
           this.users.push(response.data);
-          this.messageService.add({ severity: 'success', detail: 'User created with exit' });
           this.resetVariables();
         },
         error: () => {
-          this.spinner.hide();
-          this.messageService.add({ severity: 'error', detail: 'Error adding user' });
+        
         }
       });
     //}
