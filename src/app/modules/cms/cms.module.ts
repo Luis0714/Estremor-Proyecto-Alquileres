@@ -12,7 +12,6 @@ import { TokenInterceptor } from 'src/app/interceptors/token.interceptor';
 import { WebsiteModule } from '../website/website.module';
 
 
-// PrimeNg
 import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
