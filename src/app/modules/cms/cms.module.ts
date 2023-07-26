@@ -13,17 +13,6 @@ import { WebsiteModule } from '../website/website.module';
 import { NgxSpinnerModule } from "ngx-spinner";
 
 // PrimeNg
-import { TableModule } from 'primeng/table';
-import { ButtonModule } from 'primeng/button';
-import { InputNumberModule } from 'primeng/inputnumber';
-import { InputTextModule } from 'primeng/inputtext';
-import { DialogModule } from 'primeng/dialog';
-import { ConfirmDialogModule } from 'primeng/confirmdialog';
-import { ToastModule } from 'primeng/toast';
-import { DropdownModule } from 'primeng/dropdown';
-import { FileUploadModule } from 'primeng/fileupload';
-import { ConfirmationService } from 'primeng/api';
-import { MessageService } from 'primeng/api';
 import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
@@ -39,20 +28,10 @@ import { ReactiveFormsModule } from '@angular/forms';
     WebsiteModule,
     ReactiveFormsModule,
     HttpClientModule,
-    TableModule,
-    ButtonModule,
-    InputNumberModule,
-    InputTextModule,
-    DialogModule,
-    ConfirmDialogModule,
-    ToastModule,
-    DropdownModule,
-    FileUploadModule,
-    NgxSpinnerModule.forRoot({ type: 'ball-scale-multiple' }),
-  ],
+    ],
 
   providers:
-  [ ConfirmationService, MessageService,
+  [
     { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true }
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]

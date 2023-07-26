@@ -1,88 +1,35 @@
-<p-confirmDialog header="Confirmation" icon="pi pi-exclamation-triangle" rejectButtonStyleClass="p-button-text">
-</p-confirmDialog>
-<p-toast></p-toast>
+<!-- Filtros -->
+<div>
+  <label>Nombre:</label>
+  <input type="text" [(ngModel)]="searchName" (ngModelChange)="applyFiltersAndPagination()">
+  <label>Correo:</label>
+  <input type="text" [(ngModel)]="searchEmail" (ngModelChange)="applyFiltersAndPagination()">
+</div>
 
-<p-dialog header="Users details" [(visible)]="displayDialog" [modal]="true">
-  <div class="card">
-    <form *ngIf="formGroup" [formGroup]="formGroup" (ngSubmit)="onSubmit()">
-      <div class="formgrid grid">
-        <div class="field col-12 md:col-4">
-          <label for="userId">Nro</label>
-          <input id="userId" type="text" pInputText formControlName="userId" />
-        </div>
-        <div class="field col-12 md:col-4">
-          <label for="name">Nombre</label>
-          <input id="name" type="text" pInputText formControlName="name" />
-        </div>
-        <div class="field col-12 md:col-4">
-          <label for="email">Correo</label>
-          <p-inputNumber id="email" formControlName="email" [min]="2020" [showButtons]="true">
-          </p-inputNumber>
-        </div>
-        <div class="field col-12">
-          <label for="image">Image</label>
-          <p-fileUpload name="image" accept="image/*" [auto]="true" [customUpload]="true" #imageFileUpload>
-          </p-fileUpload>
-        </div>
-        <div class="field col-12">
-          <label for="document">Technical Data Sheet</label>
-          <p-fileUpload name="document" accept="application/pdf" [auto]="true" [customUpload]="true"
-            #documentFileUpload></p-fileUpload>
-        </div>
-      </div>
-      <p-button label="Save" type="submit" [disabled]="!formGroup.valid"></p-button>
-    </form>
-  </div>
-</p-dialog>
+<!-- Tabla de usuarios -->
+<table>
+  <thead>
+    <tr>
+      <th>Nro</th>
+      <th>Nombre</th>
+      <th>Correo</th>
+      <th>Imagen</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of filteredUsers">
+      <td>{{ user.userId }}</td>
+      <td>{{ user.name }}</td>
+      <td>{{ user.email }}</td>
+      <td><img [src]="user.image" alt="Imagen de usuario" height="50"></td>
+    </tr>
+  </tbody>
+</table>
 
-<p-button title="Add" icon="pi pi-plus" (onClick)="displayDialog = true"></p-button>
-
-<div class="table-container">
-  <p-table [value]="users" responsiveLayout="stack" [loading]="loadingTable">
-    <ng-template pTemplate="caption">
-      Cars
-    </ng-template>
-    <ng-template pTemplate="header">
-      <tr>
-        <th pSortableColumn="userId">Nro <p-sortIcon field="userId"></p-sortIcon>
-        </th>
-        <th pSortableColumn="image">Nombre <p-sortIcon field="name"></p-sortIcon>
-        </th>
-        <th pSortableColumn="name">Correo <p-sortIcon field="email"></p-sortIcon>
-        </th>
-        <th>Image</th>
-        <th></th>
-      </tr>
-      <tr>
-        <th>
-          <p-columnFilter type="numeric" field="userId"></p-columnFilter>
-        </th>
-        <th>
-          <p-columnFilter type="text" field="name"></p-columnFilter>
-        </th>
-        <th>
-          <p-columnFilter type="text" field="email"></p-columnFilter>
-        </th>
-        <th></th>
-        <th></th>
-      </tr>
-    </ng-template>
-    <ng-template pTemplate="body" let-user>
-      <tr>
-        <td>{{user.userId}}</td>
-        <td>{{user.name}}</td>
-        <td>{{user.email}}</td>
-        <td style="text-align: center;">
-          <img src="{{azureStorageBaseUrl}}/estremoruserscontainer/{{user.image}}" style="max-height: 50px;" *ngIf="user.image"/>
-        </td>
-        <td>
-          <p-button [disabled]="!user.image" title="Download image" icon="pi pi-download"
-            styleClass="p-button-secondary" (onClick)="download(user.image)"></p-button>
-          <p-button [disabled]="true" title="Edit" icon="pi pi-pencil" styleClass="p-button-success" (onClick)="editCar(user)"></p-button>
-          <p-button [disabled]="true" title="Delete" icon="pi pi-trash" styleClass="p-button-danger" (onClick)="deleteCar(user)">
-          </p-button>
-        </td>
-      </tr>
-    </ng-template>
-  </p-table>
+<!-- Paginación -->
+<div>
+  <button [disabled]="pageNumber === 1" (click)="pageNumber = 1; applyFiltersAndPagination()">Primera</button>
+  <button [disabled]="pageNumber === 1" (click)="pageNumber = pageNumber - 1; applyFiltersAndPagination()">Anterior</button>
+  <button [disabled]="pageNumber * pageSize >= totalUsers" (click)="pageNumber = pageNumber + 1; applyFiltersAndPagination()">Siguiente</button>
+  <button [disabled]="pageNumber * pageSize >= totalUsers" (click)="pageNumber = (totalUsers / pageSize); applyFiltersAndPagination()">Última</button>
 </div>
