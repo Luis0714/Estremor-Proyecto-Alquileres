@@ -20,6 +20,12 @@ export class UsersComponent implements OnInit{
   carIdToEdit: number = 0;
   loadingTable = false;
   azureStorageBaseUrl = Environment.azureStorageBaseUrl;
+  filteredUsers: Partial<User>[] = []; // Lista filtrada para paginado
+  pageSize: number = 10; // Tamaño de página
+  pageNumber: number = 1; // Número de página actual
+  totalUsers: number = 0; // Total de usuarios
+  searchName: string = ''; // Filtro por nombre
+  searchEmail: string = ''; // Filtro por correo
 
   @ViewChild('imageFileUpload', { static: false }) imageFileUpload?: FileUpload;
   @ViewChild('documentFileUpload', { static: false }) documentFileUpload?: FileUpload;
@@ -65,6 +71,14 @@ export class UsersComponent implements OnInit{
       addressId: ['0',Validators.required],
       rolId: ['1', Validators.required]
     });
+  }
+
+  applyFiltersAndPagination() {
+    this.filteredUsers = this.users
+      .filter(user => user.name?.includes(this.searchName) && user.email?.includes(this.searchEmail));
+    this.totalUsers = this.filteredUsers.length;
+    this.filteredUsers = this.filteredUsers
+      .slice((this.pageNumber - 1) * this.pageSize, (this.pageNumber - 1) * this.pageSize + this.pageSize);
   }
 
   editCar(user: Partial<User>) {
