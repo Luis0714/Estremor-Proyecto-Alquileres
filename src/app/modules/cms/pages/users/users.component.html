@@ -1,9 +1,9 @@
 <!-- Filtros -->
 <div>
   <label>Nombre:</label>
-  <input type="text" [(ngModel)]="searchName" (ngModelChange)="applyFiltersAndPagination()">
+  <input type="text" formControlName="searchName" (ngModelChange)="applyFiltersAndPagination()">
   <label>Correo:</label>
-  <input type="text" [(ngModel)]="searchEmail" (ngModelChange)="applyFiltersAndPagination()">
+  <input type="text" formControlName="searchEmail" (ngModelChange)="applyFiltersAndPagination()">
 </div>
 
 <!-- Tabla de usuarios -->
