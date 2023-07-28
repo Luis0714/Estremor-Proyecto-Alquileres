@@ -17,7 +17,6 @@ export class UsersComponent implements OnInit{
   displayDialog = false;
   carIdToEdit: number = 0;
   loadingTable = false;
-  azureStorageBaseUrl = Environment.azureStorageBaseUrl;
   filteredUsers: Partial<User>[] = []; // Lista filtrada para paginado
   pageSize: number = 10; // Tamaño de página
   pageNumber: number = 1; // Número de página actual

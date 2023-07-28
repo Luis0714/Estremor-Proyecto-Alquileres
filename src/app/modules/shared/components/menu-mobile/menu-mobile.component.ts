@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { faRightFromBracket, faEnvelope, faXmark,faUsers,faPhone, faUserSecret} from '@fortawesome/free-solid-svg-icons';
 import { User } from 'src/app/models/user.model';
+import { AuthService } from 'src/app/services/auth.service';
 import { StoreService } from 'src/app/services/store.service';
 
 
@@ -18,7 +19,7 @@ export class MenuMobileComponent implements OnInit{
   faEnvelope = faEnvelope;
   faXmark = faXmark;
 
-  constructor(private storeService: StoreService)
+  constructor(private storeService: StoreService, private authService : AuthService)
   {}
   ngOnInit(): void {
    this.getUserLogged();
@@ -28,5 +29,8 @@ export class MenuMobileComponent implements OnInit{
     this.storeService.user$.subscribe(user =>{
       this.user = user;
     });
+  }
+  logout(){
+    this.authService.logout();
   }
 }

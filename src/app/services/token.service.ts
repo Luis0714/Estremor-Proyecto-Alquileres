@@ -13,10 +13,6 @@ export class TokenService {
     saveToken(token: string) {
       sessionStorage.setItem('Token', token);
     }
-    saveUserToken(user: User) {
-      const userJSON = JSON.stringify(user);
-      sessionStorage.setItem('UserSesion', userJSON);
-    }
   
     getToken() {
       const token = sessionStorage.getItem('Token')

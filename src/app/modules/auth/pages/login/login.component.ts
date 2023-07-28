@@ -39,7 +39,6 @@ export class LoginComponent {
           next:(response) => {
             if (response.succeeded) {
               this.router.navigate(["/website"])
-              console.log(response.message,response.data);
               this.state = 'success';
            }
           },

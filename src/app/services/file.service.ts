@@ -10,7 +10,7 @@ export class FileService {
   constructor(private messageService: MessageService) { }
 
   download(documentName: string) {
-    fetch(`${Environment.azureStorageBaseUrl}/estremoruserscontainer/${documentName}`)
+    fetch(documentName)
       .then(resp => resp.blob())
       .then(blobobject => {
         const blob = window.URL.createObjectURL(blobobject);
