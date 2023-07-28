@@ -5,14 +5,12 @@ import { faRightFromBracket,faUsers,faPhone, faUserSecret} from '@fortawesome/fr
 import { User } from 'src/app/models/user.model';
 import { StoreService } from 'src/app/services/store.service';
 
-
 @Component({
-  selector: 'app-header',
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss'],
+  selector: 'app-nav',
+  templateUrl: './nav.component.html',
+  styleUrls: ['./nav.component.scss']
 })
-
-export class HeaderComponent implements OnInit {
+export class NavComponent implements OnInit {
   user : Partial<User> | null = null;
   faAngleDown = faAngleDown;
   faAngleUp = faAngleUp;

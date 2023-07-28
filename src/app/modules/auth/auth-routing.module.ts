@@ -4,8 +4,9 @@ import { LayoutComponent } from './components/layout/layout.component';
 import { LoginComponent } from './pages/login/login.component';
 import { ResetPasswordComponent } from './pages/reset-password/reset-password.component';
 import { UserRegisterComponent } from '../website/pages/user-register/user-register.component';
+import { HomeLogoutComponent } from './pages/home-logout/home-logout.component';
 
-const routes: Routes = 
+const routes: Routes =
 [
   {
     path: '',
@@ -13,8 +14,12 @@ const routes: Routes =
     children: [
       {
         path: '',
-        redirectTo: 'login',
+        redirectTo: 'home',
         pathMatch: 'full'
+      },
+      {
+        path: 'home',
+        component: HomeLogoutComponent
       },
       {
         path: 'login',

@@ -25,8 +25,7 @@ import { ConfirmationService, MessageService } from 'primeng/api';
     HttpClientModule,
   ],
   providers:
-  [ 
-    ConfirmationService, MessageService,
+  [
     { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true }
   ],
   bootstrap: [AppComponent]

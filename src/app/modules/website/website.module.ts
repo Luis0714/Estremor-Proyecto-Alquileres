@@ -12,10 +12,11 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TokenInterceptor } from 'src/app/interceptors/token.interceptor';
 import { UserRegisterComponent } from './pages/user-register/user-register.component';
 import { HomeComponent } from './pages/home/home.component';
+import { SharedModule } from 'primeng/api';
 
 
 @NgModule({
-  declarations: 
+  declarations:
   [
     HeaderComponent,
     FooterComponent,
@@ -30,9 +31,10 @@ import { HomeComponent } from './pages/home/home.component';
     WebsiteRoutingModule,
     FontAwesomeModule,
     OverlayModule,
+    SharedModule,
   ],
   providers:
-  [ 
+  [
     { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true }
   ],
 })

@@ -1,0 +1,45 @@
+<body>
+  <nav class="menu-desktop">
+    <div class="container-menus">
+      <div class="container-menu" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+        <fa-icon class="menu" [icon]="faBars"></fa-icon>
+      </div>
+
+      <div class="navbar-left">
+        <a class="logo">
+          <img src="../../../../assets/images/logos/logo1.png" alt="logo">
+        </a>
+        <ul>
+          <li>
+            <a routerLink="/home">
+              Funciones
+            <fa-icon class="icono" [icon]="openSesion ? faAngleUp : faAngleDown"></fa-icon>
+            </a>
+          </li>
+          <li>
+            <a routerLink="/cms">
+              Selecciones
+              <fa-icon class="icono" [icon]="openSesion ? faAngleUp : faAngleDown"></fa-icon>
+            </a>
+          </li>
+          <li>
+            <a routerLink="/contactenos">
+              Precios
+              <fa-icon class="icono" [icon]="openSesion ? faAngleUp : faAngleDown"></fa-icon>
+            </a>
+
+          </li>
+        </ul>
+      </div>
+      <div class="navbar-right">
+        <ul>
+          <li class="navbar-email">
+            <a id="btn-login" routerLink="/login">
+              Iniciar sesión
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</body>
