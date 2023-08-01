@@ -1,39 +1,13 @@
 @import '../../../../../styles.scss';
 
-.section {
-  scroll-margin-top: 72px;
-  background: url(../../../../../assets/images/backgroud/wd2.png)
-  center bottom -160.5px/100% 163% no-repeat scroll padding-box border-box,
-  linear-gradient(60deg, rgb(82, 67, 170), rgb(237, 80, 180)) 0% 0% /
-  auto repeat scroll padding-box border-box rgb(82, 67, 170);
-  background-blend-mode: normal, normal;
-  color: rgb(255, 255, 255);
-}
 
-.container {
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  width: 100%;
-}
-.content{
-  -webkit-box-align: center;
-  align-items: center;
-  -webkit-box-pack: start;
-  justify-content: flex-start;
-  display: flex;
-  flex-wrap: wrap;
-  margin-left: -1rem;
-  margin-right: -1rem;
-
-}
 .info{
   padding: 8rem 1rem 1rem;
   position: relative;
   scroll-margin-top: 72px;
   text-align: center;
-  width: 50%;
+  width: 100%;
+  height: 100vw;
   margin-top: 0px;
 }
 .texts{
@@ -99,9 +73,15 @@
 }
 
 @media (max-width: 780px){
-  .info{
-    width: 100%;
+  .btn{
+    display: flex;
+    justify-content: start;
+}
+  form{
+    flex-direction: column;
+    text-align: start;
   }
+
   .title{
     font-size: 1rem;
   }

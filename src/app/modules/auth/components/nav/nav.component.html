@@ -4,11 +4,17 @@
       <div class="container-menu" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
         <fa-icon class="menu" [icon]="faBars"></fa-icon>
       </div>
-
+      <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasExampleLabel">Menu</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <p>Inicie Sesion</p>
+        </div>
+      </div>
       <div class="navbar-left">
-        <a class="logo">
-          <img src="../../../../assets/images/logos/logo1.png" alt="logo">
-        </a>
+        <img id="logo" src="../../../../assets/images/icons/favicon copy.ico" alt="logo">
         <ul>
           <li>
             <a routerLink="/home">
