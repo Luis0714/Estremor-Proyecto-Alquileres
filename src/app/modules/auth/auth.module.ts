@@ -12,6 +12,7 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TokenInterceptor } from 'src/app/interceptors/token.interceptor';
 import { HomeLogoutComponent } from './pages/home-logout/home-logout.component';
 import { NavComponent } from './components/nav/nav.component';
+import { MenuMobileComponent } from '../shared/components/menu-mobile/menu-mobile.component';
 
 
 @NgModule({
@@ -27,7 +28,6 @@ import { NavComponent } from './components/nav/nav.component';
     CommonModule,
     AuthRoutingModule,
     ReactiveFormsModule,
-    SharedModule,
     FontAwesomeModule,
   ],
   providers:

@@ -191,6 +191,10 @@ img{
   font-weight: bold;
   color: mediumpurple;
 }
+.offcanvas-header{
+  background: $backgroud-degradado-right;
+  font-weight: bold;
+}
 
 @media (max-width: 780px){
   .menu{
