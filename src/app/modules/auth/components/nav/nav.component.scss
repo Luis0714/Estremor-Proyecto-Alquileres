@@ -1,8 +1,6 @@
 @import '../../../../../styles.scss';
 
-body{
-  font-family: 'Quicksand', sans-serif;
-}
+
 nav{
   background-color:$backgroud-degradado-right;
   cursor: default;
@@ -31,17 +29,13 @@ nav{
 }
 
 .logo{
-  -webkit-box-align: center;
-  align-items: center;
-  align-self: stretch;
-  display: flex;
-  padding: 2rem 0.2rem 1.2rem 1.2rem;
+   display: grid;
+  place-items: center;
 }
-.logo img{
-  display: block;
-  height: auto;
-  max-width: 80%;
-  width: auto;
+
+img{
+  width: 60px;
+  height: 40px;
 }
 .navbar-left{
   display: flex;
@@ -202,8 +196,8 @@ nav{
   .menu{
     display: block;
   }
-  .logo{
-    margin-left: 43px;
+  #logo{
+    display: block;
   }
   .container-menu{
     display: block;
