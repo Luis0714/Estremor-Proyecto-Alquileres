@@ -1,4 +1,5 @@
 @import '@angular/cdk/overlay-prebuilt.css';
+@import 'https://fonts.googleapis.com/css2?family=Fredoka+One&family=Poppins:wght@300&display=swap';
 $links: #ab18dc;
 $white: #FFFFFF;
 $black: #000000;
@@ -19,10 +20,10 @@ $backgroud-degradado-center: linear-gradient(to right, $backgroud 0%, $morado 50
 $backgroud-degradado-botton: #f4f5de;
 $text: #becec4;
 $repurpu: rebeccapurple;
-$box-shadow-sombreado:  0 2px 4px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1);
+$box-shadow-sombreado:  rgba(0, 0, 0, 0.1) 0px 0px 10px;;
 body{
   margin: 0;
-  font-family: 'Quicksand', sans-serif;
+  font-family:poppins,sans-serif;
 }
 
 
