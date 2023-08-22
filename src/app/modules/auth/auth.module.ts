@@ -19,7 +19,6 @@ import { MenuMobileComponent } from '../shared/components/menu-mobile/menu-mobil
   declarations: [
     LoginComponent,
     LayoutComponent,
-    ButtonComponent,
     ResetPasswordComponent,
     HomeLogoutComponent,
     NavComponent,
@@ -29,6 +28,7 @@ import { MenuMobileComponent } from '../shared/components/menu-mobile/menu-mobil
     AuthRoutingModule,
     ReactiveFormsModule,
     FontAwesomeModule,
+    SharedModule,
   ],
   providers:
   [

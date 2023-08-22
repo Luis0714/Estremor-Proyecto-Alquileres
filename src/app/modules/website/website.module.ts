@@ -14,6 +14,7 @@ import { UserRegisterComponent } from './pages/user-register/user-register.compo
 import { HomeComponent } from './pages/home/home.component';
 import { SharedModule } from 'primeng/api';
 import { FormRegisterUserComponent } from '../shared/components/form-register-user/form-register-user.component';
+import { ButtonComponent } from '../shared/components/button/button.component';
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import { FormRegisterUserComponent } from '../shared/components/form-register-us
   [
     HeaderComponent,
     FooterComponent,
+    ButtonComponent,
     LayoutComponent,
     MenuDesktopComponent,
     MenuMobileComponent,
