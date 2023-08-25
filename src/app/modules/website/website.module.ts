@@ -13,6 +13,8 @@ import { TokenInterceptor } from 'src/app/interceptors/token.interceptor';
 import { UserRegisterComponent } from './pages/user-register/user-register.component';
 import { HomeComponent } from './pages/home/home.component';
 import { SharedModule } from 'primeng/api';
+import { FormRegisterUserComponent } from '../shared/components/form-register-user/form-register-user.component';
+import { ButtonComponent } from '../shared/components/button/button.component';
 
 
 @NgModule({
@@ -20,11 +22,13 @@ import { SharedModule } from 'primeng/api';
   [
     HeaderComponent,
     FooterComponent,
+    ButtonComponent,
     LayoutComponent,
     MenuDesktopComponent,
     MenuMobileComponent,
     UserRegisterComponent,
     HomeComponent,
+    FormRegisterUserComponent,
   ],
   imports: [
     CommonModule,
