@@ -15,6 +15,9 @@ import { HomeComponent } from './pages/home/home.component';
 import { SharedModule } from 'primeng/api';
 import { FormRegisterUserComponent } from '../shared/components/form-register-user/form-register-user.component';
 import { ButtonComponent } from '../shared/components/button/button.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { ConfirmationModalComponent } from '../shared/components/confirmation-modal/confirmation-modal.component';
+import { HeaderModalComponent } from '../shared/components/header-modal/header-modal.component';
 
 
 @NgModule({
@@ -23,17 +26,20 @@ import { ButtonComponent } from '../shared/components/button/button.component';
     HeaderComponent,
     FooterComponent,
     ButtonComponent,
+    HeaderModalComponent,
     LayoutComponent,
     MenuDesktopComponent,
     MenuMobileComponent,
     UserRegisterComponent,
     HomeComponent,
     FormRegisterUserComponent,
+    ConfirmationModalComponent,
   ],
   imports: [
     CommonModule,
     WebsiteRoutingModule,
     FontAwesomeModule,
+    ReactiveFormsModule,
     OverlayModule,
     SharedModule,
   ],

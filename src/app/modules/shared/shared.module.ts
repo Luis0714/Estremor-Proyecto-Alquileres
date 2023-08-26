@@ -1,15 +1,21 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Button } from 'primeng/button';
-import { ButtonComponent } from './components/button/button.component';
+import {DialogModule} from '@angular/cdk/dialog';
+import { ReactiveFormsModule } from '@angular/forms';
+
+
 
 
 
 @NgModule({
   declarations: [
+
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    ReactiveFormsModule,
+    DialogModule,
   ]
+
 })
 export class SharedModule { }
