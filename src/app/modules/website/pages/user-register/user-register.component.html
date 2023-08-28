@@ -1,15 +1,13 @@
 <div class="container-form">
-  <h3 class="title">Registrarme en estremor</h3>
   <form [formGroup]="form">
     <div class="container">
       <div class="colunm">
-
         <div class="campo">
           <div class="incon-label">
             <i class="fa-solid fa-user"></i>
             <label for="name">Nombre</label>
           </div>
-          <input  type="text" id="name" name="name" class="form-control">
+          <input  type="text" id="name" formControlName="Name"  name="name" class="form-control">
           <p *ngIf="false" class="form-text text-muted">Este campo es requerido</p>
         </div>
 
@@ -18,7 +16,7 @@
             <i class="fa-solid fa-calendar-days"></i>
             <label for="name">Fecha de nacimiento</label>
           </div>
-          <input  type="text" id="name" name="name" class="form-control">
+          <input  type="text" id="name" formControlName="DateOfBirth" name="name" class="form-control">
           <p *ngIf="false" class="form-text text-muted">Este campo es requerido</p>
         </div>
 
@@ -27,7 +25,7 @@
             <i class="fa-solid fa-envelope"></i>
             <label for="name">Correo</label>
           </div>
-          <input  type="text" id="name" name="name" class="form-control">
+          <input  type="text" id="name" formControlName="Email" name="name" class="form-control">
           <p *ngIf="false" class="form-text text-muted">Este campo es requerido</p>
         </div>
 
@@ -36,23 +34,15 @@
             <i class="fa-solid fa-location-dot"></i>
             <label for="name">Dirección</label>
           </div>
-          <input  type="text" id="name" name="name" class="form-control">
+          <input  type="text" id="name" formControlName="Address" name="name" class="form-control">
           <p *ngIf="false" class="form-text text-muted">Este campo es requerido</p>
         </div>
 
         <div class="campo">
           <div class="butons-image">
-            <input type="file" formControlName="FileImage" accept="image/*" (change)="onImageSelected($event)">
+            <input type="file" formControlName="FileImage"  accept="image/*" (change)="onImageSelected($event)">
             <div class="buttons">
-              <button
-               (click)="deleteImage()"
-               ng-if="selectedImage"
-               type="button" class="button-delete"
-               data-toggle="tooltip"
-               data-placement="top" title="Eliminar Imagen"
-               data-toggle="modal" data-target="#exampleModal">
-                <i style="color: #ff3535;" class="fa-solid fa-trash"></i>
-              </button>
+              <app-button class="btn-delete" (click)="deleteImage()" tooltip="Eliminar Imagen" color="purple" iconClass="fa-solid fa-trash"></app-button>
             </div>
           </div>
         </div>
@@ -60,7 +50,6 @@
         <div class="campo">
           <div class="container-image">
             <img  [src]="imageUrl" *ngIf="imageUrl" alt="Imagen-User">
-            <img  src="../../../../../assets/images/user/user-default.png" *ngIf="!imageUrl" alt="Imagen-User">
           </div>
         </div>
       </div>
@@ -71,7 +60,7 @@
             <i class="fa-solid fa-user"></i>
             <label for="name">Primer Apellido</label>
           </div>
-          <input  type="text" id="name" name="name" class="form-control">
+          <input  type="text" id="name" formControlName="LastName" name="name" class="form-control">
           <p *ngIf="false" class="form-text text-muted">Este campo es requerido</p>
         </div>
 
@@ -80,12 +69,8 @@
             <i class="fa-solid fa-id-card"></i>
             <label for="name">Tipo de documento</label>
           </div>
-          <select class="form-control" id="exampleFormControlSelect1">
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
+          <select formControlName="DocumentTypeId" class="form-control" id="exampleFormControlSelect1">
+            <option *ngFor="let documentType of documentsTypes" [value]="documentType.documentTypeId">{{ documentType.name }}</option>
           </select>
           <p *ngIf="false" class="form-text text-muted">Este campo es requerido</p>
         </div>
@@ -95,7 +80,7 @@
             <i class="fa-solid fa-lock"></i>
             <label for="name">Contraseña</label>
           </div>
-          <input  type="password" id="name" name="name" class="form-control">
+          <input  type="password" formControlName="Password" id="name" name="name" class="form-control">
           <p *ngIf="false" class="form-text text-muted">Este campo es requerido</p>
         </div>
 
@@ -104,12 +89,8 @@
             <i class="fa-solid fa-user-secret"></i>
             <label for="name">Rol</label>
           </div>
-          <select class="form-control" id="exampleFormControlSelect1">
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
+          <select formControlName="RolId" class="form-control" id="exampleFormControlSelect1">
+            <option *ngFor="let rol of rols" [value]="rol.rolId">{{ rol.nombre }}</option>
           </select>
           <p *ngIf="false" class="form-text text-muted">Este campo es requerido</p>
         </div>
@@ -121,7 +102,7 @@
             <i class="fa-solid fa-user"></i>
             <label for="name">Segundo Apellido</label>
           </div>
-          <input  type="text" id="name" name="name" class="form-control">
+          <input  type="text" formControlName="SecondLastName" id="name" name="name" class="form-control">
           <p *ngIf="false" class="form-text text-muted">Este campo es requerido</p>
         </div>
 
@@ -130,7 +111,7 @@
             <i class="fa-solid fa-id-card"></i>
             <label for="name">Numero de documento</label>
           </div>
-          <input  type="text" id="name" name="name" class="form-control">
+          <input  type="text" formControlName="Document" id="name" name="name" class="form-control">
           <p *ngIf="false" class="form-text text-muted">Este campo es requerido</p>
         </div>
         <div class="campo">
@@ -138,13 +119,13 @@
             <i class="fa-solid fa-phone"></i>
             <label for="name">Numero de telefono</label>
           </div>
-          <input  type="text" id="name" name="name" class="form-control">
+          <input  type="text"formControlName="numberPhone" id="name" name="name" class="form-control">
           <p *ngIf="false" class="form-text text-muted">Este campo es requerido</p>
         </div>
       </div>
     </div>
     <div class="container-buttom">
-      <app-button class="buttom-register"  label="Aceptar" color="purple"></app-button>
+      <app-button (click)="registerUser()" disabled="form.invalid" class="buttom-register"  label="Aceptar" color="purple"></app-button>
     </div>
   </form>
 </div>

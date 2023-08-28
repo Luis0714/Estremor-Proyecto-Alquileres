@@ -6,7 +6,8 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./button.component.scss']
 })
 export class ButtonComponent {
-  @Input() label: string = 'Click me!';
+  @Input() label: string = '';
   @Input() iconClass: string = '';
   @Input() color: string = 'blue';
+  @Input() tooltip: string = '';
 }

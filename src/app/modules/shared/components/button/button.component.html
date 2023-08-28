@@ -1,4 +1,7 @@
-<button [ngClass]="{'custom-button': true, 'blue': color === 'blue', 'green': color === 'green', 'red': color === 'red'}">
+<button
+  data-toggle="tooltip"
+  data-placement="top" title="{{tooltip}}"
+ [ngClass]="{'custom-button': true, 'blue': color === 'blue', 'green': color === 'green', 'red': color === 'red'}">
   <span class="button-icon" [ngClass]="iconClass"></span>
   {{ label }}
 </button>
