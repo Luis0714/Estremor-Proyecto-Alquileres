@@ -6,6 +6,8 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./header-modal.component.scss']
 })
 export class HeaderModalComponent {
+
   @Input() label: string = 'Titulo';
+  @Input() type: string = 'purple';
   @Input() iconClass: string = 'fa-solid fa-circle-question';
 }

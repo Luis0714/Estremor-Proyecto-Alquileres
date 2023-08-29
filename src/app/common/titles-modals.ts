@@ -1,3 +1,6 @@
 export const TitlesModals ={
-  Confirmation: "Confirmación"
+  Confirmation: "Confirmación",
+  Error: "Error",
+  Alert: "Alerta",
+  Succeed: "Succeed"
 }

@@ -1,14 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Dialog } from '@angular/cdk/dialog';
-import { ConfirmationModalComponent } from 'src/app/modules/shared/components/confirmation-modal/confirmation-modal.component';
-import { TitlesModals } from 'src/app/common/titles-modals';
 import { QuestionsModals } from 'src/app/common/questions-modals';
-import { Icons } from 'src/app/common/icons';
 import { DocumentType } from 'src/app/models/documentType.model';
 import { DocumentTypeService } from 'src/app/services/document-type.service';
 import { RolModel } from 'src/app/models/rol.model';
 import { RolService } from 'src/app/services/rol.service';
+import { User } from 'src/app/models/user.model';
+import { UserService } from 'src/app/services/user.service';
+import { ModalService } from 'src/app/services/modal.service';
+import { Dialog } from '@angular/cdk/dialog';
+import { MessagesModals } from 'src/app/common/message.modal';
+import { error } from 'jquery';
 @Component({
   selector: 'app-user-register',
   templateUrl: './user-register.component.html',
@@ -17,14 +19,18 @@ import { RolService } from 'src/app/services/rol.service';
 export class UserRegisterComponent implements OnInit {
   form: FormGroup = new FormGroup('');
   imageUrl: string | ArrayBuffer | null = null;
-  selectedImage: Blob = new Blob();
+  selectedImage!: File;
   documentsTypes: DocumentType[] = [];
-  rols: RolModel[] = []
+  rols: RolModel[] = [];
+  deleteImageConfirmation: boolean | unknown = false;
+
   constructor(
     private formBuilder: FormBuilder,
-    private dialog: Dialog,
     private documentTypeService: DocumentTypeService,
-    private rolService: RolService
+    private rolService: RolService,
+    private modalService: ModalService,
+    private dialog : Dialog,
+    private userService: UserService,
   ) {
     this.builForm();
   }
@@ -51,29 +57,48 @@ export class UserRegisterComponent implements OnInit {
   }
 
   registerUser() {
+
     if (this.form.valid) {
-      var data = this.form.value;
-      console.log(data);
+      var data: Partial<User> = {
+        ...this.form.value
+      };
+      if (this.selectedImage) {
+          data.fileImage = this.selectedImage;
+      }
+      this.userService.createUser(data).subscribe({
+       next: (response) =>{
+          if(response.succeeded){
+            this.modalService.showSucceed(response.message,this.dialog);
+          }
+       },
+       error: (err) => {
+        this.modalService.showError(err.error.message,this.dialog);
+       }
+      });
     }
   }
 
   getDocumentsTypes() {
     this.documentTypeService.getAllDocumentsTypes().subscribe({
       next: (response) => {
-        this.documentsTypes = response.data;
+          if(response.succeeded) {
+            this.documentsTypes = response.data;
+          }
       },
       error: (err) => {
-        alert("ah ocurido un error al obtener los tipos de documento")
+        this.modalService.showError(err.error.message,this.dialog);
       }
     });
   }
   getRols() {
     this.rolService.getAllRols().subscribe({
       next: (response) => {
-        this.rols = response.data;
+        if(response.succeeded) {
+          this.rols = response.data;
+        }
       },
       error: (err) => {
-        alert("ah ocurido un error al obtener los roles")
+        this.modalService.showError(err.error.message,this.dialog);
       }
     });
   }
@@ -81,8 +106,6 @@ export class UserRegisterComponent implements OnInit {
   onImageSelected(event: any) {
     if (event.target.files && event.target.files.length > 0) {
       this.selectedImage = event.target.files[0];
-
-      // Mostrar la imagen en la interfaz
       const reader = new FileReader();
       reader.onload = (e: any) => {
         this.imageUrl = e.target.result;
@@ -90,31 +113,17 @@ export class UserRegisterComponent implements OnInit {
       reader.readAsDataURL(this.selectedImage);
     }
   }
-  uploadImage() {
-
-  }
-
-
-  deleteImage(): void {
+  deleteImage(){
     this.openModal();
-    this.imageUrl = null;
-    this.selectedImage = new Blob();
   }
 
   openModal() {
-    let dialogRef = this.dialog.open(ConfirmationModalComponent, {
-      minWidth: '400px',
-      minHeight: '80%',
-      maxWidth: '50%',
-      data: {
-        title: TitlesModals.Confirmation,
-        question: QuestionsModals.DeleteImageUser,
-        iconClass: Icons.Question
+    let dialogRef = this.modalService.showConfirmation(QuestionsModals.DeleteImageUser,this.dialog);
+    dialogRef.closed.subscribe((output) => {
+      if (typeof output === 'object' && output !== null && 'response' in output) {
+        this.deleteImageConfirmation = output.response;
+       console.log(this.deleteImageConfirmation)
       }
-    })
-
-    dialogRef.closed.subscribe(output => {
-      console.log(output);
     });
   }
 }
