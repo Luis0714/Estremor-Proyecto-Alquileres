@@ -19,7 +19,7 @@
                 </div>
                 <input placeholder="Enter Password" formControlName="password" type="password" class="form-control w-full rounded bg-gray-100 border-2" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
               </div>
-                <!-- <app-button label="Login" (click)="login()"  color="purple"></app-button> -->
+                <app-button label="Login" (click)="login()"  color="purple"></app-button>
             </form>
             <div class="error-message" *ngIf="state === 'failed'">
               El usuario o la contraseña son incorrectos.

@@ -42,7 +42,7 @@
           <div class="butons-image">
             <input type="file" formControlName="FileImage"  accept="image/*" (change)="onImageSelected($event)">
             <div class="buttons">
-              <app-button class="btn-delete" (click)="deleteImage()" tooltip="Eliminar Imagen" color="purple" iconClass="fa-solid fa-trash"></app-button>
+              <app-button *ngIf="imageUrl" class="btn-delete" (click)="deleteImage()" tooltip="Eliminar Imagen" color="purple" iconClass="fa-solid fa-trash"></app-button>
             </div>
           </div>
         </div>

@@ -11,6 +11,7 @@ import { ModalService } from 'src/app/services/modal.service';
 import { Dialog } from '@angular/cdk/dialog';
 import { MessagesModals } from 'src/app/common/message.modal';
 import { error } from 'jquery';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-user-register',
   templateUrl: './user-register.component.html',
@@ -31,6 +32,7 @@ export class UserRegisterComponent implements OnInit {
     private modalService: ModalService,
     private dialog : Dialog,
     private userService: UserService,
+    private router: Router
   ) {
     this.builForm();
   }
@@ -69,6 +71,7 @@ export class UserRegisterComponent implements OnInit {
        next: (response) =>{
           if(response.succeeded){
             this.modalService.showSucceed(response.message,this.dialog);
+            this.router.navigate(['/login']);
           }
        },
        error: (err) => {

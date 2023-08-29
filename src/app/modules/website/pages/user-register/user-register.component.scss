@@ -1,67 +1,66 @@
 @import '../../../../../styles.scss';
-.container-form{
+.container-form {
   background: $white;
   box-shadow: $box-shadow-sombreado;
-  margin: 50px;
-  padding: 40px;
+  margin: 20px; /* Reducir el margen para pantallas más pequeñas */
+  padding: 20px; /* Reducir el padding para pantallas más pequeñas */
 }
-.title{
+
+.title {
   display: flex;
   justify-content: center;
 }
 
-.buttom-register{
+.buttom-register {
   margin-top: 10px;
-  width: 60%;
+  width: 100%; /* Hacer el botón más ancho para llenar el espacio disponible */
 }
 
-
-.container{
+.container {
   display: grid;
-  grid-template-columns: 30% 30% 30%;
-  justify-content: center;
+  grid-template-columns: 1fr; /* Cambiar a una sola columna en pantallas pequeñas */
   gap: 15px;
+  justify-content: center;
 }
-.campo{
+
+.campo {
   display: flex;
   flex-direction: column;
   align-items: baseline;
   margin: 8px;
   margin-bottom: 18px;
 }
-.incon-label{
+
+.incon-label {
   display: flex;
   gap: 12px;
   justify-content: center;
   align-items: center;
   margin-bottom: 4px;
 }
-.butons-image{
+
+.butons-image {
   display: flex;
   gap: 4px;
 }
-.butons-image input{
-  width: 70%;
+
+.butons-image input {
+  width: 100%; /* Hacer que el input ocupe todo el ancho disponible */
 }
-.buttons{
+
+.buttons {
   display: flex;
   gap: 4px;
-  margin-left: 30px;
+  margin-left: auto; /* Mover los botones al extremo derecho */
 }
 
-.bn-delete{
-
-}
-
-.container-image img{
-  width: 110px;
-  height: 80px;
+.container-image img {
+  width: 100%; /* Hacer que la imagen ocupe todo el ancho disponible */
+  height: auto; /* Ajustar automáticamente la altura */
   object-fit: cover;
 }
 
-
-.container-buttom{
- display: flex;
- justify-content: center;
+.container-buttom {
+  display: flex;
+  justify-content: center;
 }
-
