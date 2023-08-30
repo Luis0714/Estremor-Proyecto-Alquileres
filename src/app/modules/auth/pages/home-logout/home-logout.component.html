@@ -9,12 +9,12 @@
           <p class="texto">Encuentra el alojamiento perfecto para tu próxima aventura en la ciudad. Explora opciones únicas y acogedoras que se ajusten a tu estilo y presupuesto. ¡Haz de Estremor tu hogar lejos del hogar!</p>
         </div>
         <div class="container-form">
-          <form action="">
+          <form [formGroup]="form">
             <div class="btn">
-              <input class="email" type="email" placeholder="Correo electrónico" name="email" id="">
+              <input class="email" type="email" placeholder="Correo electrónico" formControlName="email" name="email">
             </div>
             <div class="btn">
-              <button class="btn-register" type="submit">¡Registrate!</button>
+              <app-button (click)="redirectToRegistro()" label="¡Registrate!" color="purble"></app-button>
             </div>
           </form>
         </div>

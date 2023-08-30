@@ -9,7 +9,7 @@ body{
     background: $white;
     top: 4px;
     right: -210px;
-    width: 120px;
+    width: 173px;
     height: auto;
     border: 1px solid $Very-light-pink;
     border-radius: 6px;
@@ -20,12 +20,24 @@ body{
     padding: 0;
     margin: 0;
   }
+  .container-image img{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  .container-image{
+    display: flex;
+    justify-content: center;
+    padding: 4px;
+    margin-bottom: 8px;
+  }
   .desktop-menu ul li{
     display: flex;
     flex-direction: column;
     text-align: end;
   }
-  
+
   .desktop-menu ul li a:last-child{
     padding-top: 20px;
     border-top: 1px solid $Very-light-pink;
@@ -33,14 +45,14 @@ body{
   .desktop-menu ul li a:last-child:hover{
    color: $Very-light-pink;
   }
-  
+
   .desktop-menu ul li a:not(:last-child){
     font-weight: bold;
   }
   .desktop-menu ul li a:hover{
     color: $holpital-green;
   }
-  
+
   .desktop-menu ul li a:last-child{
     color: $holpital-green;
     font-size: $sm;

@@ -11,7 +11,7 @@ import { ModalService } from 'src/app/services/modal.service';
 import { Dialog } from '@angular/cdk/dialog';
 import { MessagesModals } from 'src/app/common/message.modal';
 import { error } from 'jquery';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 @Component({
   selector: 'app-user-register',
   templateUrl: './user-register.component.html',
@@ -32,11 +32,13 @@ export class UserRegisterComponent implements OnInit {
     private modalService: ModalService,
     private dialog : Dialog,
     private userService: UserService,
-    private router: Router
+    private router: Router,
+    private activeRoute: ActivatedRoute,
   ) {
     this.builForm();
   }
   ngOnInit(): void {
+    this.initEmail()
     this.getDocumentsTypes();
     this.getRols();
   }
@@ -55,6 +57,15 @@ export class UserRegisterComponent implements OnInit {
       DocumentTypeId: ['1', Validators.required],
       Address: ['Carrera 31 # 68 - A35', Validators.required],
       RolId: ['1', Validators.required]
+    });
+  }
+
+  initEmail(){
+    this.activeRoute.queryParams.subscribe(params => {
+      const email = params['email'];
+      if (email) {
+        this.form.patchValue({ email: email });
+      }
     });
   }
 

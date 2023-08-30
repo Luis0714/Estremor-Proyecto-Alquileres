@@ -6,10 +6,30 @@
   padding: 20px; /* Reducir el padding para pantallas más pequeñas */
 }
 
-.title {
-  display: flex;
-  justify-content: center;
+/* Estilos para el encabezado del formulario de registro */
+.registration-header {
+  text-align: center;
+  margin-bottom: 20px;
+  color: $links;
 }
+
+/* Estilos para la animación del encabezado */
+.animated-heading {
+  animation: fadeInUp 1s ease-in-out;
+}
+
+/* Animación */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 
 .buttom-register {
   margin-top: 10px;
@@ -55,8 +75,8 @@
 }
 
 .container-image img {
-  width: 100%; /* Hacer que la imagen ocupe todo el ancho disponible */
-  height: auto; /* Ajustar automáticamente la altura */
+  width: 160px;
+  height: 180px;
   object-fit: cover;
 }
 

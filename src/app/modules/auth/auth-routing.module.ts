@@ -5,6 +5,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { ResetPasswordComponent } from './pages/reset-password/reset-password.component';
 import { UserRegisterComponent } from '../website/pages/user-register/user-register.component';
 import { HomeLogoutComponent } from './pages/home-logout/home-logout.component';
+import { InputFileComponent } from '../shared/components/input-file/input-file.component';
 
 const routes: Routes =
 [
@@ -20,6 +21,10 @@ const routes: Routes =
       {
         path: 'home',
         component: HomeLogoutComponent
+      },
+      {
+        path: 'Contactenos',
+        component: InputFileComponent
       },
       {
         path: 'login',
