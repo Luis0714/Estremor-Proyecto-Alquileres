@@ -29,8 +29,8 @@ export class UsersComponent implements OnInit{
 
   constructor
   (
-    private userService: UserService, 
-    private formBuilder: FormBuilder, 
+    private userService: UserService,
+    private formBuilder: FormBuilder,
     private fileService: FileService
     ) { }
 
@@ -91,7 +91,7 @@ export class UsersComponent implements OnInit{
     };
 
     if (this.imageFileUpload?.files.length) {
-      data.image = this.imageFileUpload?.files[0];
+      data.fileImage = this.imageFileUpload?.files[0];
     }
 
     // if (this.carIdToEdit) {
@@ -119,7 +119,7 @@ export class UsersComponent implements OnInit{
           this.resetVariables();
         },
         error: () => {
-        
+
         }
       });
     //}

@@ -1,4 +1,5 @@
 @import '@angular/cdk/overlay-prebuilt.css';
+@import 'https://fonts.googleapis.com/css2?family=Kanit:wght@200;400&family=Quicksand:wght@300;500;700&display=swap';
 $links: #ab18dc;
 $white: #FFFFFF;
 $black: #000000;
@@ -7,7 +8,9 @@ $text-input-field: rgb(172, 66, 66);
 $holpital-green: #9ae07d;
 $maron-claro: #ffcbb8;
 $backgroud: #f9f6ec;
-$morado: #e9d6ea;
+$morado: #f5d2f7;
+$success: #2ecc71;
+$verde:#d5f8e3;
 $purpu: #002074;
 $sm: 14px;
 $md:16px;
@@ -15,14 +18,20 @@ $lg:18px;
 $backgroud-degradado-right: #f4f5de;
 $backgroud-degradado-left: #f4f5de;
 $backgroud-degradado-center: linear-gradient(to right, $backgroud 0%, $morado 50%, transparent 50%), linear-gradient(to left, $backgroud , $morado 50%);
+$degradado-link:  linear-gradient(to right, $links, $morado);
+$degradado-success:  linear-gradient(to right, $success, $verde);
 // $backgroud-degradado-botton: linear-gradient(to bottom, $morado, $backgroud);
 $backgroud-degradado-botton: #f4f5de;
 $text: #becec4;
 $repurpu: rebeccapurple;
-$box-shadow-sombreado:  0 2px 4px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1);
+$box-shadow-sombreado:  rgba(0, 0, 0, 0.1) 0px 0px 10px;;
 body{
   margin: 0;
   font-family: 'Quicksand', sans-serif;
+}
+
+h1{
+  font-family: 'Kanit', sans-serif;
 }
 
 

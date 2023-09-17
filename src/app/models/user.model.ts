@@ -3,7 +3,8 @@ import { RolModel } from "./rol.model";
 export interface User{
     userId: number;
     name: string;
-    image: File;
+    fileImage: File;
+    image: string;
     lastName: string;
     secondLastName?: string;
     dateOfBirth: Date;

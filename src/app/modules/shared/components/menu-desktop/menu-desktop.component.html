@@ -1,16 +1,12 @@
-<head>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet">
-  </head>
-  <body>
-    <div class="desktop-menu">
-      <ul>
-        <li>
-          <a routerLink="/home" class="title">Inicio</a>
-          <a routerLink="/home">Mi cuenta</a>
-          <a (click)="logout()">Sing out</a>
-        </li>
-      </ul>
-    </div>
-  </body>
+<div class="desktop-menu">
+  <div class="container-image">
+    <img (click)="showImage('Imagen')" src="{{user?.image}}" alt="image-user">
+  </div>
+  <ul>
+    <li>
+      <a routerLink="/home" class="title">Inicio</a>
+      <a routerLink="/home">Mi cuenta</a>
+      <a (click)="logout()">Sing out</a>
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,59 @@
+@import '../../../../../styles.scss';
+
+.container{
+  display: grid;
+  grid-template-columns: 30% 30% 30%;
+  justify-content: center;
+  gap: 15px;
+}
+.campo{
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  margin: 8px;
+  margin-bottom: 18px;
+}
+.incon-label{
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 4px;
+}
+.butons-image{
+  display: flex;
+  gap: 4px;
+}
+.butons-image input{
+  width: 70%;
+}
+.buttons{
+  display: flex;
+  gap: 4px;
+  margin-left: 30px;
+}
+.button-upload{
+  border: none;
+  border-radius: 8px;
+  background: $links;;
+  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+.button-delete{
+  border: none;
+  border-radius: 8px;
+  background: $links;
+  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+.button-delete:hover{
+  transform: translateZ(5px);
+  box-shadow: 2px 2px  rgba(249, 61, 44, 0.3)
+}
+.button-upload:hover{
+  transform: translateZ(5px);
+  box-shadow: 2px 2px  rgba(5, 241, 84, 0.3)
+}
+.container-image img{
+  width: 110px;
+  height: 80px;
+  object-fit: cover;
+}

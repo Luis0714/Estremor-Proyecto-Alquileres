@@ -1,3 +1,86 @@
-h1{
-    color: aqua;
+@import '../../../../../styles.scss';
+.container-form {
+  background: $white;
+  box-shadow: $box-shadow-sombreado;
+  margin: 20px; /* Reducir el margen para pantallas más pequeñas */
+  padding: 20px; /* Reducir el padding para pantallas más pequeñas */
+}
+
+/* Estilos para el encabezado del formulario de registro */
+.registration-header {
+  text-align: center;
+  margin-bottom: 20px;
+  color: $links;
+}
+
+/* Estilos para la animación del encabezado */
+.animated-heading {
+  animation: fadeInUp 1s ease-in-out;
+}
+
+/* Animación */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+.buttom-register {
+  margin-top: 10px;
+  width: 100%; /* Hacer el botón más ancho para llenar el espacio disponible */
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr; /* Cambiar a una sola columna en pantallas pequeñas */
+  gap: 15px;
+  justify-content: center;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  margin: 8px;
+  margin-bottom: 18px;
+}
+
+.incon-label {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.butons-image {
+  display: flex;
+  gap: 4px;
+}
+
+.butons-image input {
+  width: 100%; /* Hacer que el input ocupe todo el ancho disponible */
+}
+
+.buttons {
+  display: flex;
+  gap: 4px;
+  margin-left: auto; /* Mover los botones al extremo derecho */
+}
+
+.container-image img {
+  width: 160px;
+  height: 180px;
+  object-fit: cover;
+}
+
+.container-buttom {
+  display: flex;
+  justify-content: center;
 }
